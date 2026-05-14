@@ -3,6 +3,8 @@ I'm using a RTL-SDR usb dongle and my own dipole antenna to pickup satellite wea
 
 I used this blog to help with the construction of my antenna: https://km1ndy.com/diy-dipole-how-does-antenna-work/
 
+The formula for calculating the length of the dipole legs is: L = 468/F(mHz) So, this is 468/ divided by the desired frequency you wish to recieve a signal from. So for the ISS, I needed to tune into 437.550 mHz so 468/437.550 is 1.07ft. Divide that between two legs, and you get 6.4 in for each leg. For the Meteor satelites the frequency is relatively similar, so I did 468/137.1Mhz and got 40.92in and 20.46in for each dipole leg. 
+
 The main satellites I focused on in this project were the: ISS, Meteor M2, Meteor M2-3, and Meteor M2-4. I intially wanted to start with the various NOAA satellites, (NOAA-19, NOAA-18, ect) but these satellites have been decommisioned in recent years. 
 
 I used this website https://isstracker.pl/en/satellites/25544/passes?lat=33.46889508112487&lng=-94.01470199237441 to track the location of satellites and the approximate time I'd need to setup my antenna and begin recording. For the ISS specifically, I also used ARISS. https://www.ariss.org/upcoming-sstv-events.html ARISS shows when the ISS is transmitting SSTV (Slow Scan Television). The ISS only transmits SSTV during these specific events.
