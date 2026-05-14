@@ -23,6 +23,7 @@ For the ISS the signal you want to record is audio. While recording the audio on
 Orbitron is another important piece of software for this project. The program allows you to track the location of satellites in real time. This gives you an idea of when and where the satelitte will appear. I used this with all the satellites in this project. SDR# has a plugin that allows it to connect with Obitron. This allows for real time tracking of the satellite's frequency. A satellite's frequency shifts slightly as it shifts, the satellites frequency lightly shifts. This is called a Doppler shift. This plugin with Orbitron allows for a smoother signal to be recorded. 
 
 Link to the plugin: https://fuzzthepiguy.tech/tracking-plugin/
+This site was also helpful when setting up Orbitron: https://usradioguy.com/meteor-satellite/#dde
 
 Over the next week or two, I plan to record and signals from the previously discussed satellites and will adjust the projects scope depending on what may or may not succeed. 
 
