@@ -5,7 +5,7 @@ I used this blog to help with the construction of my antenna: https://km1ndy.com
 
 The formula for calculating the length of the dipole legs is: L = 468/F(mHz) So, this is 468/ divided by the desired frequency you wish to recieve a signal from. So for the ISS, I needed to tune into 437.550 mHz so 468/437.550 is 1.07ft. Divide that between two legs, and you get 6.4 in for each leg. For the Meteor satelites the frequency is relatively similar, so I did 468/137.1Mhz and got 40.92 in and 20.46 in for each dipole leg. 
 
-The main satellites I focused on in this project were the: ISS, Meteor M2, Meteor M2-3, and Meteor M2-4. I intially wanted to start with the various NOAA satellites, (NOAA-19, NOAA-18, ect) but these satellites have been decommisioned in recent years. 
+The main satellites I focused on in this project were the: ISS, Meteor M2, Meteor M2-3, and Meteor M2-4. I intially wanted to start with the various NOAA satellites, (NOAA-19, NOAA-18, ect) but these satellites have been decommisioned in August 2025. 
 
 I used this website https://isstracker.pl/en/satellites/25544/passes?lat=33.46889508112487&lng=-94.01470199237441 to track the location of satellites and the approximate time I'd need to setup my antenna and begin recording. For the ISS specifically, I also used ARISS. https://www.ariss.org/upcoming-sstv-events.html ARISS shows when the ISS is transmitting SSTV (Slow Scan Television). The ISS only transmits SSTV during these specific events.
 
@@ -13,17 +13,30 @@ As for software, I used SDR# to visualize, recieve and demodulate radio signals 
 
 Frequencies used for each satellite:
 ISS broadcasted at 437.550 mHz
-Meteor M2 broadcasted at 137.100 mHz
+Meteor M2 broadcasted at 137.900 mHz
 Meteor M2-3 broadcasted at 137.900 mHz
-Meteor M2-4 broadcasted at 137.100 mHz or 137.900 mHz
+Meteor M2-4 broadcasted at 137.900 mHz
 I used a local NOAA test frequency to test my antenna. The frequency was 162.550 mHz  
 
-For the ISS the signal you want to record is audio. While recording the audio on a laptop, I plan to use Robot 36. Robot 36 is a smartphone app that can decode the SSTV audio signals from the ISS. For the Meteor Satellites, IQ LRPT signals are recorded instead of audio, this offers higher resolution images than NOAA images. To recieve them, a broadband recorder in SDR# was used. 
+For the ISS the signal you want to record is audio. The audio recorder in SDR# is used. Make sure that SDR# audio is output through  While recording the audio on a laptop, I plan to use Robot 36. Robot 36 is a smartphone app that can decode the SSTV audio signals from the ISS. For the Meteor Satellites, IQ LRPT signals are recorded instead of audio, this offers higher resolution images than NOAA images. To recieve them, a broadband recorder in SDR# was used. 
 
 Orbitron is another important piece of software for this project. The program allows you to track the location of satellites in real time. This gives you an idea of when and where the satelitte will appear. I used this with all the satellites in this project. SDR# has a plugin that allows it to connect with Obitron. This allows for real time tracking of the satellite's frequency. A satellite's frequency shifts slightly as it shifts, the satellites frequency lightly shifts. This is called a Doppler shift. This plugin with Orbitron allows for a smoother signal to be recorded. 
 
 Link to the plugin: https://fuzzthepiguy.tech/tracking-plugin/
 This site was also helpful when setting up Orbitron: https://usradioguy.com/meteor-satellite/#dde
+
+Some important settings I used in SDR#:
+In the radio tab: 
+NFM (Narrowband Frequency Modulation) This is the mode I used. This was used for the ISS and Meteor Satellites
+I set the bandwidth to 140k for the the Meteor satellites and 25k for the ISS. 
+Turned off the squelch setting to reduce noise/interference
+In the source tab: turn off AGC, change the sample rate to 2.048 MSPS, change the sampling mode to quadrature sampling, turn on offset tuning, RF Gain should be 35-40 dB, Correction should be around 10-15 ppm this is avoid the noise spike and get a clean/clear signal, and turn on the correct IQ setting. 
+When using the Tracking DDE client, make sure you setup the satellite settings and and check the desired satellite and use the SDR# driver to connect to the satellite and track it in real time. 
+
+When going for a satellite pass I typically check the date, time, and elavation of the desired satellite.
+10-15 minutes before the pass, get your laptop and antenna setup. You ideally want to be outside when doing this. SDR# should have all the proper settings, and two minutes before the pass begin recording audio/IQ. Then before the pass begins, I make sure my antenna legs are straight and the coax cable is stretched out. Knowing the elevation angle should give you a good idea on where to point your antenna. A low angle like 20 degrees is toward the horizon and a high angle like 90 degrees is directly above you.  As the pass goes you will have to slowly turn your antenna so you can continue to pickup the signal and get a clean image. I continue to record two minutes after the pass as well. 
+
+This is a very delicate process, and you are likely to fail dozens of times before you get a successful image. Use trial and error and make small adjustments. 
 
 Over the next week or two, I plan to record and signals from the previously discussed satellites and will adjust the projects scope depending on what may or may not succeed. 
 
