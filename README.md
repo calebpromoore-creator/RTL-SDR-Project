@@ -42,8 +42,10 @@ This is a very delicate process, and you are likely to fail dozens of times befo
 
 Over the next week or two, I plan to record and signals from the previously discussed satellites and will adjust the projects scope depending on what may or may not succeed. 
 
-Unfortunately for the time being, I was not successful in recieving a signal from the ISS. After doing further research, my dipole antenna was far from the optimal setup for recieving a signal from the ISS. My dipole was designed for satellites with much lower frequencies. I believe I could get a signal from ISS if I built a QFH (Quadrifilar Helix Antenna). At this time though, I'm not willing to spend even more money on this project. 
+Unfortunately for the time being, I was not successful in recieving a signal from the ISS. After doing further research, my dipole antenna was far from the optimal setup for recieving a signal from the ISS. My dipole was designed for satellites with much lower frequencies. I believe I could get a signal from ISS if I built a QFH (Quadrifilar Helix Antenna). At this time though, I'm not willing to spend even more money on this project. I have also decided to drop the Meteor M2 satellite because I couldnt recieve a strong signal consistently. Meteor M2-3 and M2-4 give me consistently strong signals in my area.  
 
 Even though I wasn't successful with all of my goals of this project, but I am glad it has given me a starting point in RF systems, signal processing, and communication systems in general. 
 
 I will post notes I hand wrote while working on this project as well, they will give some more insight in my documentation of the project as well as problem solving. 
+
+If I was to do this project again, I'd need to have a higher budget. This would allow me to build a more powerful antenna that would have an easier time recieveing and keeping a signal. I'd also like to try a more remote area for my passes. I have done all the passes outside my house where there can be interference. 
