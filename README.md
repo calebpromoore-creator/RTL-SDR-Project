@@ -1,5 +1,5 @@
 # RTL-SDR-Project
-I'm using a RTL-SDR usb dongle and my own dipole antenna to pickup satellite weather images, and images from the International Space Station (ISS). The goal of this project is to be able to pickup weather images from satellites as well as images from the International Space Station. Once Im able to sucessfully able to pickup and record one of these broadcasts, I'll be able to translate these broadcasts into images. Once I've successfully done this, I can automate the process. I'll be posting images on this page. 
+I'm using a RTL-SDR usb dongle and my own dipole antenna to pickup satellite weather images, and images from the International Space Station (ISS). The goal of this project is to be able to pickup weather images from satellites as well as images from the International Space Station. Once Im able to sucessfully able to pickup and record one of these broadcasts, I'll be able to translate these broadcasts into images. Once I've successfully done this, I'll be posting images on this page. 
 
 I used this blog to help with the construction of my antenna: https://km1ndy.com/diy-dipole-how-does-antenna-work/
 
@@ -38,6 +38,14 @@ When going for a satellite pass I typically check the date, time, and elavation 
 
 In SatDump, you than use Meteor M2-x LRPT to decode the .wav file. The input will be your input file and the output is in afolder of your own choosing. (I make a seperate folder for this). You should then be able to have SatDump decode and demodulate the file and if your successful, you'll have an image in the selected folder. 
 
+These were the settings I used to have the most success with SatDump. 
+Basband Format: cs16
+Sample Rate: 2.048 MSPS
+Input level: Baseband
+IQ Swap: Off
+DC Blocking: On
+Frequency Shift: I start with 0 Hz. If this is unsuccessful, I than move in increments of 2000 Hz/ -2000 Hz. For example, 2kHz, -2kHz, 4kHz, -4kHz, and I do this up to 20kHz/-20kHz. I had the most success at around 10k-16k Hz.  
+
 This is a very delicate process, and you are likely to fail dozens of times before you get a successful image. Use trial and error and make small adjustments. 
 
 Over the next week or two, I plan to record and signals from the previously discussed satellites and will adjust the projects scope depending on what may or may not succeed. 
@@ -49,3 +57,8 @@ Even though I wasn't successful with all of my goals of this project, but I am g
 I will post notes I hand wrote while working on this project as well, they will give some more insight in my documentation of the project as well as problem solving. 
 
 If I was to do this project again, I'd need to have a higher budget. This would allow me to build a more powerful antenna that would have an easier time recieveing and keeping a signal. I'd also like to try a more remote area for my passes. I have done all the passes outside my house where there can be interference. 
+
+Some other resources I used for this project:
+https://a-centauri.com/articoli/meteor-satellite-reception
+The r/RTLSDR subreddit and The r/amateursatellites subreddit
+I also used ChatGPT as well for specific issues
