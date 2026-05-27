@@ -16,7 +16,8 @@ ISS broadcasted at 437.550 mHz
 Meteor M2 broadcasted at 137.900 mHz
 Meteor M2-3 broadcasted at 137.900 mHz
 Meteor M2-4 broadcasted at 137.900 mHz
-I used a local NOAA test frequency to test my antenna. The frequency was 162.550 mHz  
+I used a local NOAA test frequency to test my antenna. The frequency was 162.550 mHz
+You want to stagger the frequency slightly so it can be corrected in satdump and make a clearer image. For example when trying to capture recording for Meteor M2-3/Meteor M2-4 I set the frequency to 137.914.500. 
 
 For the ISS the signal you want to record is audio. The audio recorder in SDR# is used. Make sure that SDR# audio is output through  While recording the audio on a laptop, I plan to use Robot 36. Robot 36 is a smartphone app that can decode the SSTV audio signals from the ISS. For the Meteor Satellites, IQ LRPT signals are recorded instead of audio, this offers higher resolution images than NOAA images. To recieve them, a broadband recorder in SDR# was used. 
 
@@ -30,7 +31,7 @@ In the radio tab:
 NFM (Narrowband Frequency Modulation) This is the mode I used. This was used for the ISS and Meteor Satellites
 I set the bandwidth to 140k for the the Meteor satellites and 25k for the ISS. 
 Turned off the squelch setting to reduce noise/interference
-In the source tab: turn off AGC, change the sample rate to 2.048 MSPS, change the sampling mode to quadrature sampling, turn on offset tuning, RF Gain should be 35-40 dB, Correction should be around 10-15 ppm or -5 to -15 ppm This largly depends on where the signal is on it's pass. The red line is where your signal is and you want to line it up with the black one, this can be done with correction. The correction has to be adjusted throught the pass. This is to avoid the noise spike and get a clean/clear signal, and turn on the correct IQ setting. 
+In the source tab: turn off AGC, change the sample rate to 2.048 MSPS, change the sampling mode to quadrature sampling, turn on offset tuning, RF Gain should be 35-40 dB, Correction should be around 10-15 ppm or -5 to -15 ppm This largly depends on where the signal is on it's pass. The red line is where your signal is and you want to line it up with the black one, this can be done with correction. Due to the doppler effect, the frequency needs to be slowly adjusted throughout the pass. At the beginning, I start at 137.914 and then shift to 137.912 and 137.910. I tone the frequency in increments of 2 to keep the signal strong. This is also to avoid the noise spike and get a clean/clear signal, and turn on the correct IQ setting. 
 When using the Tracking DDE client, make sure you setup the satellite settings and and check the desired satellite and use the SDR# driver to connect to the satellite and track it in real time. 
 
 When going for a satellite pass I typically check the date, time, and elavation of the desired satellite.
